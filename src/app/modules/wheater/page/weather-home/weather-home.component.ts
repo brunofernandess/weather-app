@@ -29,9 +29,16 @@ export class WeatherHomeComponent implements OnInit, OnDestroy  {
     .subscribe({
       next: (response) => {
 
-        response && (this.weatherDatas = response);
-        this.weatherDatas.wind.speed = this.weatherDatas.wind.speed * 3.6;
-        console.log(this.weatherDatas);
+        if (response) {
+          this.weatherDatas = response;
+          if (this.weatherDatas.wind) {
+            this.weatherDatas.wind.speed = this.weatherDatas.wind.speed * 3.6;
+            this.weatherDatas.wind.speed = parseFloat(this.weatherDatas.wind.speed.toFixed(1));
+          }
+          console.log(this.weatherDatas);
+        }
+
+
       },
       error: (error) => console.log(error),
     });
