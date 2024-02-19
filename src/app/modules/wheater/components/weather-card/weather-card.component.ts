@@ -8,7 +8,9 @@ import { faDroplet, faTemperatureHigh, faTemperatureLow, faWind } from '@fortawe
   styleUrls: [],
 })
 export class WeatherCardComponent {
+    //dados da previsão do tempo recebidos pelo componente pai
   @Input() WeatherDatasInput!: WeatherDatas;
+
 
 
 minTemperatureIcon = faTemperatureLow;
