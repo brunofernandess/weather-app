@@ -12,6 +12,7 @@
         <div class="location">{{WeatherDatasInput.name}}</div>
         <div class="temperature">
           {{WeatherDatasInput.main.temp | number: "1.0-0"}}°C
+
         </div>
       </div>
    </div>
@@ -27,7 +28,7 @@
           </div>
 
           <div class="info-block-value">
-            {{WeatherDatasInput.main.temp_min}}
+            {{WeatherDatasInput.main.temp_min | number: "1.0-0"}} °C
 
           </div>
          </div>
